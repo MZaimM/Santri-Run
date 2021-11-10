@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3.438507, y: 99}
+  m_AnchoredPosition: {x: -3.438507, y: 87.7}
   m_SizeDelta: {x: 75.414, y: -213.23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &726633241
@@ -207,8 +207,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 150
-  m_fontSizeBase: 150
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -972,7 +972,7 @@ GameObject:
   - component: {fileID: 2132173999}
   - component: {fileID: 2132174000}
   m_Layer: 5
-  m_Name: MainMenu
+  m_Name: pause
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
