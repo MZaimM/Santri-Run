@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
 
     int jumpCount = 0;
     public int maxJumps = 2;
+    public AudioSource audioJump;
+    public float speed;
 
     Animator anim;
 
@@ -17,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        
 
     }
 
@@ -24,33 +27,19 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
-        
-        float speed = 10;
 
-        body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
-
-        //flip body
-        if (horizontalInput > 0.01f)
-        {
-            anim.SetBool("lari", true);
-            transform.localScale = Vector3.one;
-        }
-        else if (horizontalInput < -0.01f)
-        {
-            anim.SetBool("lari", true);
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
-        else
-        {
-            anim.SetBool("lari", false);
-        }
+        anim.SetBool("lari", true);
+        body.velocity = new Vector2(speed, body.velocity.y);
 
         // space key pressed
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            
             anim.SetBool("lompat", true);
             jump();
+            audioJump.Play();
         }
+       
 
         // applying gravitychange when jumping
         if (body.velocity.y >= 0)
@@ -60,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
         else if (body.velocity.y < 0)
         {
             
-            body.gravityScale = 30;
+            body.gravityScale = 20;
         }
     }
     private void jump()

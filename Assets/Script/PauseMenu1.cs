@@ -6,11 +6,14 @@ public class PauseMenu1 : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject a;
+    public AudioSource audioSource;
+        
     
     public void Resume(){
         a.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        audioSource.Play();
     }
      
     void Update()
@@ -28,6 +31,7 @@ public class PauseMenu1 : MonoBehaviour
         a.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        audioSource.Stop();
     }
 
     
