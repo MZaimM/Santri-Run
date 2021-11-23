@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseMenu1 : MonoBehaviour
 {
@@ -34,5 +35,5 @@ public class PauseMenu1 : MonoBehaviour
         audioSource.Stop();
     }
 
-    
-}
+
+    }
