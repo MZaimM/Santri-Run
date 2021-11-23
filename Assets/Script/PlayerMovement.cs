@@ -11,9 +11,9 @@ public class PlayerMovement : MonoBehaviour
     public int maxJumps = 2;
     public AudioSource audioJump;
     public float speed;
-    public int displayScore;
-    public int score;
-    public Text scoreUI;
+    //public int displayScore;
+    //public int score;
+    //public Text scoreUI;
 
     Animator anim;
 
@@ -23,9 +23,6 @@ public class PlayerMovement : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        displayScore = 0;
-        score = 1;
-        StartCoroutine(ScoreUpdater());
 
     }
 
@@ -78,20 +75,6 @@ public class PlayerMovement : MonoBehaviour
         {
             jumpCount = 0;
             anim.SetBool("lompat", false);
-        }
-    }
-
-    private IEnumerator ScoreUpdater()
-    {
-        while (true)
-        {
-            if (displayScore < score)
-            {
-                displayScore++; //Increment the display score by 1
-                scoreUI.text = displayScore.ToString(); //Write it to the UI
-            }
-            score++;
-            yield return new WaitForSeconds(0.2f); // I used .2 secs but you can update it as fast as you want
         }
     }
 }
