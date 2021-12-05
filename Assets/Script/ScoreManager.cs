@@ -26,6 +26,7 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        scoreIncreasing = true;
         if (scoreIncreasing)
         {
             scoreCount += publicPerSecond * Time.deltaTime;
@@ -37,7 +38,7 @@ public class ScoreManager : MonoBehaviour
             PlayerPrefs.SetFloat("HighScore", highScoreCount);
         }
 
-        scoreText.text = "Score : " + Mathf.Round(scoreCount);
+        scoreText.text = "" + Mathf.Round(scoreCount);
         highScoreText.text = "High Score : " + Mathf.Round(highScoreCount);
     }
 }
